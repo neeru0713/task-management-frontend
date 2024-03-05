@@ -158,16 +158,18 @@ export default function Register() {
               </h6>
             </td>
             <td className="align-middle">
-              <MDBTooltip tag="a" wrapperProps={{ href: "#!" }} title="Done">
-                <MDBIcon
-                  fas
-                  icon="check"
-                  color="success"
-                  size="lg"
-                  className="me-3"
-                  onClick={() => updateTaskStatus(task._id)}
-                />
-              </MDBTooltip>
+              {!task.isCompletedTask && (
+                <MDBTooltip tag="a" wrapperProps={{ href: "#!" }} title="Done">
+                  <MDBIcon
+                    fas
+                    icon="check"
+                    color="success"
+                    size="lg"
+                    className="me-3"
+                    onClick={() => updateTaskStatus(task._id)}
+                  />
+                </MDBTooltip>
+              )}
               <MDBTooltip tag="a" wrapperProps={{ href: "#!" }} title="Remove">
                 <MDBIcon
                   fas
@@ -191,6 +193,18 @@ export default function Register() {
         <MDBRow className="d-flex justify-content-center align-items-center">
           <MDBCol md="12" xl="10">
             <MDBCard>
+              {isLoggedIn && (
+                <MDBBtn
+                  style={{ position: "absolute", right: "10px", top: "10px" }}
+                  color="danger"
+                  onClick={() => {
+                    localStorage.removeItem("token"); // Clear token from localStorage
+                    window.location.reload(); // Reload the page
+                  }}
+                >
+                  Logout
+                </MDBBtn>
+              )}
               <MDBCardBody className="p-4 text-black">
                 <div className="text-center pt-3 pb-2">
                   <img
@@ -199,6 +213,7 @@ export default function Register() {
                     width="60"
                   />
                   <h2 className="my-4">Task List</h2>
+
                   {isLoggedIn && (
                     <MDBBtn onClick={() => setShowForm(!showForm)}>
                       Create Task

@@ -76,6 +76,7 @@ function Login() {
                 name="email"
                 onChange={(e) => handleInputUpdate(e)}
                 id="formControlLg"
+                className="form-input"
                 type="email"
                 size="lg"
               />
@@ -85,6 +86,7 @@ function Login() {
                 label="Password"
                 name="password"
                 id="formControlLg"
+                className="form-input"
                 type="password"
                 onChange={(e) => handleInputUpdate(e)}
                 size="lg"

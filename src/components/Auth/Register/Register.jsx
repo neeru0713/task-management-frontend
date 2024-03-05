@@ -83,6 +83,7 @@ function Register() {
                 wrapperClass="mb-4 mx-5 w-100"
                 color="white"
                 labelClass="text-white"
+                className="form-input"
                 onChange={(e) => handleInputUpdate(e)}
                 name="username"
                 label="User name"
@@ -93,6 +94,7 @@ function Register() {
               <MDBInput
                 wrapperClass="mb-4 mx-5 w-100"
                 labelClass="text-white"
+                className="form-input"
                 onChange={(e) => handleInputUpdate(e)}
                 name="email"
                 label="Email address"
@@ -103,6 +105,7 @@ function Register() {
               <MDBInput
                 wrapperClass="mb-4 mx-5 w-100"
                 labelClass="text-white"
+                className="form-input"
                 onChange={(e) => handleInputUpdate(e)}
                 name="password"
                 label="Password"
@@ -113,6 +116,7 @@ function Register() {
               <MDBInput
                 wrapperClass="mb-4 mx-5 w-100"
                 labelClass="text-white"
+                className="form-input"
                 onChange={(e) => handleInputUpdate(e)}
                 name="confirmPassword"
                 label="Confirm Password"
