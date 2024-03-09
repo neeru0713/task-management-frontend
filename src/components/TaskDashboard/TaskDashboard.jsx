@@ -44,7 +44,7 @@ export default function Register() {
       });
       if (!response.ok) throw new Error("Network response was not ok.");
       const data = await response.json();
-      setTasks(data);
+      setTasks(data.task);
     } catch (error) {
       console.error("Failed to fetch tasks:", error);
     }
